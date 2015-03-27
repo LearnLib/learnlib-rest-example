@@ -17,5 +17,5 @@ Clone and run the example from this repository
 
 Alternatively, run the project directly from the command line using maven:
 ```
-mvn exec:java -Dexec.mainClass='de.learnlib.example.Example1'`
+mvn exec:java -Dexec.mainClass='de.learnlib.example.Example1'
 ```
