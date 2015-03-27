@@ -73,11 +73,14 @@
 			<groupId>de.learnlib</groupId>
 			<artifactId>learnlib-mapper</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>net.automatalib</groupId>
-			<artifactId>automata-commons-dotutil</artifactId>
+			<artifactId>automata-jung-visualizer</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.automatalib</groupId>
+			<artifactId>automata-commons-util</artifactId>
 		</dependency>
 		
 		

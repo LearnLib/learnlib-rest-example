@@ -1,7 +1,5 @@
 package de.learnlib.example;
 
-import java.io.IOException;
-import java.io.StringReader;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Random;
@@ -9,8 +7,7 @@ import java.util.Random;
 import javax.ws.rs.client.WebTarget;
 
 import net.automatalib.automata.transout.MealyMachine;
-import net.automatalib.commons.dotutil.DOT;
-import net.automatalib.util.graphs.dot.GraphDOT;
+import net.automatalib.visualization.Visualization;
 import net.automatalib.words.Alphabet;
 import net.automatalib.words.Word;
 import net.automatalib.words.impl.Alphabets;
@@ -86,14 +83,6 @@ public class Example1 {
 		Duration duration = Duration.between(instant, end);
 		System.err.println("duration "+duration);
 		
-		// if graphviz is not installed we just capture the exception
-		try {
-			Appendable sb = new StringBuffer();
-			GraphDOT.write(hypothesis, alphabet, sb);
-			StringReader sr = new StringReader(sb.toString());
-			DOT.renderDOT(sr, true);
-		} catch (IOException e) {
-			System.err.println("Unable to render hypothesis "+e);
-		}
+		Visualization.visualizeGraph(hypothesis.transitionGraphView(alphabet), true);
 	}
 }
