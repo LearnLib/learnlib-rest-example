@@ -66,6 +66,10 @@
 		</dependency>
 		<dependency>
 			<groupId>de.learnlib</groupId>
+			<artifactId>learnlib-reuse</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.learnlib</groupId>
 			<artifactId>learnlib-lstar-generic</artifactId>
 		</dependency>
 

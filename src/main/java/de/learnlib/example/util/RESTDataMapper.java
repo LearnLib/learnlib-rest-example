@@ -1,5 +1,7 @@
 package de.learnlib.example.util;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.ws.rs.client.WebTarget;
 
 import de.learnlib.api.SULException;
@@ -13,6 +15,8 @@ import de.learnlib.mapper.api.Mapper;
 public class RESTDataMapper
 		implements
 		Mapper<String, String, ContextExecutableInput<Integer, WebTarget>, Integer> {
+	
+	protected static final AtomicInteger globalCounter = new AtomicInteger();
 
 	private int counter = 0;
 
@@ -20,7 +24,7 @@ public class RESTDataMapper
 	@Override
 	public void pre() {
 		// we don't reset explicitly, here we use a counter
-		++counter;
+		counter = globalCounter.getAndIncrement();
 	}
 
 	/** {@inheritDoc} */
